@@ -1,0 +1,62 @@
+$light: #ffffff;
+$gray: #c4ccde;
+$colorFondo: #171717;
+$colorSeleccion: #3fe6e6;
+$darkBg: #111111;
+$tiktok1: #ff2c56;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #1e1e1e;
+    color: $light;
+    font-family: "Bruno Ace", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .linea_divisor{
+    margin: 10px 0 30px 0;
+  }
+
+
+  .content-data-principal {
+    background-color: #212121;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 20px;
+    border: 1px solid #932a3f;
+
+    width: fit-content;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+
+  .overlay-general-url {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Ajusta al ancho deseado */
+    max-width: 600px; /* Puedes ajustar este valor */
+    margin: 20px auto; /* Centra el contenedor con margen */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: transparent !important; /* Color de fondo suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: hidden; /* Evita que los elementos salgan del contenedor */
+  }
+
+  .overlay-general-url-line {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100vw;
+    height: 100vh; /* O ajusta según tu diseño */
+    background-color: transparent !important; /* Fondo de la página */
+  }

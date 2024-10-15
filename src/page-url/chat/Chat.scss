@@ -1,0 +1,50 @@
+/** aqui vamos ver diferentes estilos */
+#chat-container {
+    width: 100%;
+    height: 600px; /* Ajusta la altura según sea necesario */
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+    padding: 15px; /* Espaciado interno para el contenedor del chat */
+    box-sizing: border-box; /* Incluye el padding en el cálculo de la altura */
+
+}
+
+#chat-container::-webkit-scrollbar {
+    display: none;
+}
+
+.chat-line {
+    display: flex;
+    align-items: center; /* Alinea los elementos en el centro */
+    margin-bottom: 10px; /* Espaciado entre mensajes */
+    padding: 10px; /* Espaciado interno para los mensajes */
+    border-radius: 8px; /* Bordes redondeados para los mensajes */
+    position: relative; /* Para el uso de pseudo-elementos */
+    word-wrap: break-word;
+}
+
+
+
+.badge img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.username {
+    font-weight: bold;
+    color: $tiktok1;
+    font-size: 25px;
+}
+
+.colon {
+    margin: 5px 10px;
+    font-size: 30px;
+}
+
+.message-content {
+    color: $light;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-size: 25px;
+}

@@ -1,0 +1,110 @@
+.div_viewers_count {
+    background-color: #212121;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 20px;
+    border: 1px solid #932a3f;
+
+    width: fit-content;
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+    h3 {
+        color: #4895be;
+        margin-bottom: 20px;
+    }
+
+    .overlay_desc{
+        font-size: 1.17rem;
+        padding: 20px;
+    }
+}
+
+.viewer_count_option {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid #fff;
+    padding: 10px;
+    height: 100%;
+
+    .div_vista_previa,  .div_options_vista {
+        width: 50%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .div_vista_previa {
+        border-right: 2px solid black; /* Línea divisoria en el centro */
+    }
+
+    .vista_previa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        border: 1px solid green;
+        width: 30%;
+        height: 50%;
+        border-radius: 16px;
+        padding: 8px 8px 4px;
+
+        img {
+            margin-right: 20px;
+        }
+    }
+
+    .div_fondo {
+        display: flex;
+        align-items: center; /* Alinear verticalmente */
+        justify-content: space-between; /* Espacio entre el span y el input */
+        margin-bottom: 20px;
+
+        .text_fondo {
+            font-weight: bold;
+            margin-right: 10px;
+            flex: 1; /* Hace que el span ocupe más espacio */
+        }
+
+
+        input[type="color"], input[type="range"], select {
+            flex: 2; /* Hace que el input o select ocupe más espacio */
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #4CAF50;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #4CAF50;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        
+        select {
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            appearance: none; /* Remover la apariencia predeterminada */
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDE0IDE0Ij4KICAgIDxwYXRoIGQ9Ik00LjEyNiA1LjA4NGMuMTIzLS4xMTYuMjgyLS4xNzUuNDM3LS4xNzVoNS4wODYuNTY2LjAwNy4yODctLjk5OC45OTIuMTI3LjExNS4yOC4xNzUuNDM1LjE3NWg1LjA5MmMuMTU1LjAwNy4zMTgtLjA1OC40MzUtLjE3NWwuNDM1LS40MzVjLjExNi0uMTE2LjE3NC0uMjg3LjE3NS0uNDM1Yy4wMDctLjE1Ny0uMDU4LS4zMTktLjE3NS0uNDM3bC00LjQzNS00LjQzNWMtLjExNy0uMTE1LS4yODItLjE3NS0uNDM1LS4xNzUtLjE1NS4wMDctLjMxNy4wNTgtLjQzNS4xNzVsLS40MzUuNDM1Yy0uMTE1LjExNS0uMTc0LjI4Mi0uMTc1LjQzNWguNTAyYy0uMTUyLS4wMDctLjMxOS4wNTgtLjQzNS4xNzVMNS4xNzUgNS4wODRsLS40MzUuNDM1Yy0uMTE3LjExNS0uMjgxLjE3NS0uNDM3LjE3NS0uMTU1LS4wMDYtLjMxNy0uMDU3LS40MzUtLjE3NWwtLjQzNS0uNDM1Yy0uMTE1LS4xMTctLjI4My0uMTc0LS40MzUtLjE3NS0uMTU4LjAwNy0uMzE5LjA1OC0uNDM1LjE3NWwtNC40MzUgNC40MzVjLS4xMTYtLjExNy0uMjgyLS4xNzQtLjQzNS0uMTc1Yy0uMTU2LS4wMDgtLjMxOC4wNTgtLjQzNS4xNzVsLS40MzUuNDM1Yy0uMTE1LjExNi0uMTczLjI4My0uMTc0LjQzN2wuMDA3LjAwNy42OTggLjk5OC42OTggLjk5OGMuMTE2LjEyNC4yODcuMTg1LjQzNy4xODUuMTUzLjAwNy4zMTgtLjA2MS40MzUtLjE4NWwuNDM1LS40MzVsLjk5Mi0uOTk4Yy4xMTctLjExNy4yOC0uMTczLjQzNS0uMTczLjE1My4wMDcuMzE4LjA2MS40MzcuMTczbC45OTguOTk4LjAwNy4wMDcuNzA1LjcwN2MuMTI4LjEyNC4yODguMTc5LjQ0Mi4xNzdjLjE1NS0uMDA5LjMxNi0uMDY5LjQzMy0uMTc3bC40MzMtLjQzNWMuMTI0LS4xMjguMTgxLS4yODguMTg2LS40MzdjLS4wMDctLjE0OC0uMDU3LS4zMTEtLjE3NS0uNDM1eiIvPjwvc3ZnPgo='); /* Flecha personalizada */
+            background-position: right 10px center; /* Posicionar la flecha */
+            background-repeat: no-repeat;
+            background-size: 12px;
+        }
+    }
+    
+    
+}
+
