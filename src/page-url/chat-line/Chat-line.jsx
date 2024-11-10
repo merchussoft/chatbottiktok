@@ -40,32 +40,35 @@ export const ChatLine = () => {
     }, [socket])
 
   return (
-    <div className='overlay-general-url-line' >
-        <div id="chat-container_line" ref={chat_container_ref}>
 
-            {messages.map((message, i) =>(
-                <div className="chat-message-line" key={i + 1}>
-                    <span className="user-info-line">
-                        <span className="badge-line">
-                            <img src={message.profilePictureUrl} alt={message.nickname} />
-                        </span>
+    <>
+        <div className='overlay-general-url-line' >
+            <div id="chat-container_line" ref={chat_container_ref}>
 
-                        <span className="username-line">
-                        {message.nickname}
-                        </span>
+                {messages.map((message, i) =>(
+                    <div className="chat-message-line" key={i + 1}>
+                        <span className="user-info-line">
+                            <span className="badge-line">
+                                <img src={message.profilePictureUrl} alt={message.nickname} />
+                            </span>
 
-                        <span className="colon-line">:</span>
+                            <span className="username-line">
+                            {message.nickname}
+                            </span>
 
-                        <span className="message-content-line">
-                            {message.comment}
-                        </span>
-                </span>
+                            <span className="colon-line">:</span>
+
+                            <span className="message-content-line">
+                                {message.comment}
+                            </span>
+                    </span>
+                </div>
+
+                ))}
+                
+
             </div>
-
-            ))}
-            
-
         </div>
-    </div>
+    </>
   )
 }

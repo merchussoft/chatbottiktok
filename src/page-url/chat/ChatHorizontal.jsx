@@ -4,7 +4,7 @@ import useSpeechSynthesis from '../../hooks/useSpeechSynthesis';
 
 import './Chat.scss';
 
-export const Chat = () => {
+export const ChatHorizontal = () => {
 
     const { socket } = useSocket();
     const [messages, setMessage] = useState([]);
