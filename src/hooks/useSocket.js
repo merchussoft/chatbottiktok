@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import io from 'socket.io-client';
 
-const SOCKET_URL = 'http://127.0.0.1:3000';
+const SOCKET_URL = 'https://tiktokchatapi.onrender.com';
 
 const useSocket = () => {
 
