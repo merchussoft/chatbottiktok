@@ -1,0 +1,53 @@
+.likeIconContainer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.totalLikes {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.likeIcon {
+    display: inline-block;
+    color: #ff4500;
+    font-size: 40px; /* Mantiene el tamaño de fuente en 40px */
+    opacity: 0;
+    position: relative;
+}
+
+/* Animación para latido prolongado */
+@keyframes prolongedHeartBeat {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0; /* Empieza y termina con opacidad 0 */
+    }
+    10% {
+        opacity: 1; /* Aparece rápidamente */
+    }
+    20% {
+        transform: scale(1.2); /* Aumenta el tamaño */
+    }
+    30% {
+        transform: scale(1); /* Vuelve al tamaño original */
+    }
+    40% {
+        transform: scale(1.2); /* Segundo latido */
+    }
+    50% {
+        transform: scale(1); /* Vuelve al tamaño original */
+    }
+    60% {
+        opacity: 0; /* Desaparece al final */
+    }
+}
+
+.showLike {
+    font-size: 40px; /* Mantiene el tamaño de fuente en 40px */
+    animation: prolongedHeartBeat 1.5s ease-in-out;
+}

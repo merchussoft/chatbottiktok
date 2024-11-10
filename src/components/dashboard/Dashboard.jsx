@@ -11,15 +11,23 @@ export const Dashboard = () => {
     const { socket } = useSocket();
 
     useEffect(() => {
-        if(socket) {
+        if(socket && localStorage.getItem('socket_id')) {
             socket.on('connected', (data) => {
                 console.log('mirando el connected ==== ', data)
                 setConexSocket(data.message);
+                localStorage.setItem('socket_id', socket.id)
             });
     
             socket.on('error', (data) => {
                 console.log('mirando el error ==== ', data)
                 setConexSocket(data.message);
+                localStorage.removeItem('socket_id')
+            });
+
+            socket.on('disconnected', (data) => {
+                console.log('mirando el disconnected ==== ', data)
+                setConexSocket(data.message);
+                localStorage.removeItem('socket_id')
             });
     
             return () => {
@@ -56,9 +64,7 @@ export const Dashboard = () => {
                             onChange={handleIInputChange}
                             className="input-form"
                         />
-
                         <button type="submit" className="button-form">Conectar</button>
-
                     </form>
 
                     <span>{conexSocket}</span>

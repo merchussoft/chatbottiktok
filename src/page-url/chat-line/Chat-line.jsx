@@ -9,10 +9,6 @@ export const ChatLine = () => {
     const [messages, setMessage] = useState([]);
     const chat_container_ref = useRef(null);
 
-    const scrollToBottom = () => {
-        if (chat_container_ref.current)  chat_container_ref.current.scrollLeft = chat_container_ref.current.scrollWidth;;
-    }
-
     const scrollTo = () => {
         if (chat_container_ref.current) {
             // Desplazar el contenedor completamente hacia la derecha
@@ -30,8 +26,14 @@ export const ChatLine = () => {
                 setMessage(prevMessages => [...prevMessages, data]);
                 scrollTo();
             })
+
+            socket.on('disconnected', (data) => {
+                console.log('mirando el disconnected ==== ', data)
+                localStorage.removeItem('socket_id')
+            });
     
             return () => {
+                socket.off('chat');
                 socket.disconnect();
             }
         }

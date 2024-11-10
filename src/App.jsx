@@ -7,6 +7,7 @@ import { ChatLine } from './page-url/chat-line/Chat-line'
 import { Chat } from './page-url/chat/chat'
 
 import './App.scss'
+import { LikesOverlay } from './page-url/likes/likes-overlay'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
 
             <Route path="/chat" exact={true} element={ <Chat />}/>
             <Route path="/chatline" exact={true} element={ <ChatLine />}/>
+            <Route path="/overlay/likes-counter" exact={true} element={ <LikesOverlay />}/>
 
             <Route 
               path="*" 

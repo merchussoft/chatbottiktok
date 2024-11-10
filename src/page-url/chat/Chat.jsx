@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState} from 'react';
 import useSocket from '../../hooks/useSocket';
+import useSpeechSynthesis from '../../hooks/useSpeechSynthesis';
 
 import './Chat.scss';
 
@@ -8,8 +9,9 @@ export const Chat = () => {
     const { socket } = useSocket();
     const [messages, setMessage] = useState([]);
     const chat_container_ref = useRef(null);
+    const speak = useSpeechSynthesis();
 
-    const scrollTo = () => {
+    const scrollToBottom  = () => {
         if (chat_container_ref.current) {
             // Desplazar el contenedor completamente hacia la derecha
             chat_container_ref.current.scrollTo({
@@ -18,20 +20,25 @@ export const Chat = () => {
             });
         }
     }
- 
-
     useEffect(() => {
         if(socket) {
             socket.on('chat', (data) => {
                 setMessage(prevMessages => [...prevMessages, data]);
-                scrollTo();
+                speak(`${data.nickname} dice: ${data.comment}`)
+                scrollToBottom ();
             })
+
+            socket.on('disconnected', (data) => {
+                console.log('mirando el disconnected ==== ', data)
+                localStorage.removeItem('socket_id')
+            });
     
             return () => {
+                socket.off('chat');
                 socket.disconnect();
             }
         }
-    }, [socket])
+    }, [socket, speak])
 
   return (
     <div className='overlay-general-url' >
