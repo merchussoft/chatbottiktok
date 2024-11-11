@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route  } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom'
 import { Sidebar } from './components/sidebar/Sidebar'
 import { Dashboard } from './components/dashboard/Dashboard'
 import { OverlayObs } from './components/overlayobs/OverlayObs'
