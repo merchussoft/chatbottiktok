@@ -5,9 +5,9 @@ import { OverlayObs } from './components/overlayobs/OverlayObs'
 import { TtsChat } from './components/tts_chat/TtsChat'
 import { ChatLine } from './page-url/chat-line/Chat-line'
 import { ChatHorizontal } from './page-url/chat/ChatHorizontal';
+import { LikesOverlay } from './page-url/likes/Likes-overlay'
 
 import './App.scss'
-import { LikesOverlay } from './page-url/likes/likes-overlay'
 
 function App() {
 
