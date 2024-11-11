@@ -7,7 +7,7 @@ import { ChatLine } from './page-url/chat-line/Chat-line'
 import { ChatHorizontal } from './page-url/chat/ChatHorizontal';
 
 import './App.scss'
-import { LikesOverlay } from './page-url/likes/Likes-overlay';
+import { LikesOverlay } from './page-url/likes/Likes-overlays';
 
 function App() {
 
