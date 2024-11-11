@@ -30,11 +30,11 @@ export const LikesOverlay = () => {
 
     return (
         <>
-        <div className="likeIconContainer">
-            <span className={!showLike ? 'likeIcon' : 'showLike'}>
-                ❤️
-            </span> {countLikes}
-        </div>
+            <div className="likeIconContainer">
+                <span className={!showLike ? 'likeIcon' : 'showLike'}>
+                    ❤️
+                </span> {countLikes}
+            </div>
         </>
     )
 }
