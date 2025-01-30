@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 
-const useSpeechSynthesis = () => {
+export const useSpeechSynthesis = () => {
 
     const speak = useCallback((message) => {
         if ('speechSynthesis' in window) {
@@ -13,6 +13,3 @@ const useSpeechSynthesis = () => {
 
     return speak;
 }
-
-
-export default useSpeechSynthesis;

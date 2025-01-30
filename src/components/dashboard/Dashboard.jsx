@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import useSocket from "../../hooks/useSocket";
+import { useSocket } from "../../hooks";
 
 import "./dashboard.scss";
 
@@ -11,7 +11,7 @@ export const Dashboard = () => {
     const { socket } = useSocket();
 
     useEffect(() => {
-        if(socket && localStorage.getItem('socket_id')) {
+        if(socket) {
             socket.on('connected', (data) => {
                 console.log('mirando el connected ==== ', data)
                 setConexSocket(data.message);
@@ -67,7 +67,7 @@ export const Dashboard = () => {
                         <button type="submit" className="button-form">Conectar</button>
                     </form>
 
-                    <span>{conexSocket}</span>
+                    <span>{ conexSocket }</span>
                 </div>
             </div>
         </div>

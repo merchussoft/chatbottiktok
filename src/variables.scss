@@ -42,21 +42,18 @@ $tiktok1: #ff2c56;
 
   .overlay-general-url {
     display: flex;
-    flex-direction: column;
-    width: 100%; /* Ajusta al ancho deseado */
-    max-width: 600px; /* Puedes ajustar este valor */
-    margin: 20px auto; /* Centra el contenedor con margen */
-    border-radius: 10px; /* Bordes redondeados */
-    background-color: transparent !important; /* Color de fondo suave */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    overflow: hidden; /* Evita que los elementos salgan del contenedor */
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 100%;
+    height: 100%;
   }
 
   .overlay-general-url-line {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    width: 100vw;
-    height: 100vh; /* O ajusta según tu diseño */
+    align-items: center;
+    padding: 10px;
     background-color: transparent !important; /* Fondo de la página */
   }

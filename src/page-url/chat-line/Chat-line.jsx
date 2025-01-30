@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import useSocket from '../../hooks/useSocket';
+import { useSocket } from '../../hooks';
+import { ChatMessage } from '../../partials';
 
 import './Chat_line.scss';
 
@@ -44,29 +45,14 @@ export const ChatLine = () => {
     <>
         <div className='overlay-general-url-line' >
             <div id="chat-container_line" ref={chat_container_ref}>
-
                 {messages.map((message, i) =>(
-                    <div className="chat-message-line" key={i + 1}>
-                        <span className="user-info-line">
-                            <span className="badge-line">
-                                <img src={message.profilePictureUrl} alt={message.nickname} />
-                            </span>
-
-                            <span className="username-line">
-                            {message.nickname}
-                            </span>
-
-                            <span className="colon-line">:</span>
-
-                            <span className="message-content-line">
-                                {message.comment}
-                            </span>
-                    </span>
-                </div>
-
+                    <ChatMessage
+                        key={i}
+                        profilePictureUrl={message.profilePictureUrl}
+                        nickname={message.nickname}
+                        comment={message.comment}
+                    />
                 ))}
-                
-
             </div>
         </div>
     </>

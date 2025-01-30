@@ -6,8 +6,10 @@ import { TtsChat } from './components/tts_chat/TtsChat'
 import { ChatLine } from './page-url/chat-line/Chat-line'
 import { ChatHorizontal } from './page-url/chat/ChatHorizontal';
 
+
 import './App.scss'
 import { LikesOverlay } from './page-url/likes/Likes-overlays';
+import { TTSBot } from './page-url/tts-bot/Tts-bot'
 
 function App() {
 
@@ -19,6 +21,7 @@ function App() {
             <Route path="/chat" exact={true} element={ <ChatHorizontal />}/>
             <Route path="/chatline" exact={true} element={ <ChatLine />}/>
             <Route path="/overlay/likes-counter" exact={true} element={ <LikesOverlay />}/>
+            <Route path="/tts_bot" exact={true} element={ <TTSBot />}/>
 
             <Route 
               path="*" 

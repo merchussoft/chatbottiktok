@@ -1,7 +1,9 @@
+@use "../../variables.scss" as vars;
+
 .sidebar {
     width: 250px;
     height: calc(100vh);
-    background: $colorFondo;
+    background: vars.$colorFondo;
     color: #fff;
     padding: 20px;
     overflow-y: auto;
@@ -11,7 +13,7 @@
 
     h2 {
       padding: 0 0 20px 0;
-      border-bottom: 1px solid $tiktok1;
+      border-bottom: 1px solid vars.$tiktok1;
       margin-bottom: 20px;
       font-size: 30px;
       text-align: center;
@@ -32,7 +34,7 @@
       a {
         width: 100%;
         text-decoration: none;
-        color: $light;
+        color: vars.$light;
     display: block;
     padding: 10px;
     cursor: pointer;
@@ -42,8 +44,9 @@
 
       a:hover {
         width: 100%;
-        background-color: $darkBg;
-        color: $tiktok1;
+        color: vars.$light;
+        background-color: vars.$darkBg;
+        color: vars.$tiktok1;
       }
     }
     

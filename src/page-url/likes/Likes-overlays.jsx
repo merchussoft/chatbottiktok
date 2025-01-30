@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import useSocket from '../../hooks/useSocket';
+import { useSocket } from '../../hooks';
 import './likes-overlay.scss'
 
 export const LikesOverlay = () => {

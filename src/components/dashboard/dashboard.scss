@@ -1,3 +1,5 @@
+@use "../../variables.scss" as vars;
+
 .content-data-principal {
     text-align: center;
     margin-top: 50px;
@@ -30,8 +32,8 @@
             border-radius: 5px;
             outline: none;
             margin-right: 20px;    
-            background: $colorFondo;
-            color: $light;
+            background: vars.$colorFondo;
+            color: vars.$light;
             font-family: "Bruno Ace", sans-serif;
         }
 

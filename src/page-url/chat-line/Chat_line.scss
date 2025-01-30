@@ -1,10 +1,11 @@
+@use "../../variables.scss" as vars;
+
 
 #chat-container_line {
     width: 100%;
     height: 40px; /* Altura del chat */
     overflow-x: auto; /* Permitir desplazamiento horizontal */
     white-space: nowrap; /* Evitar que los mensajes se envuelvan */
-    position: relative;
     display: flex; /* Permitir que los elementos se alineen en fila */
     flex-direction: row;
     align-items: center;
@@ -17,7 +18,7 @@
     display: none;
 }
 
-.chat-message-line {
+.chat-message {
     display: inline-block;
     padding: 0 10px; /* Espaciado interno */
     box-sizing: border-box;
@@ -29,26 +30,28 @@
 
 }
 
-.username-line {
+.username {
     font-weight: bold; /* Negrita para el nombre de usuario */
     font-size: 30px;
-    color: $tiktok1;
+    color: vars.$tiktok1;
 }
 
-.colon-line {
+.colon {
     margin: 0 15px 0 5px;
     font-weight: bold;
     font-size: 30px;
 }
 
-.badge-line img {
-    width: 30px; /* Ajusta el tamaño de la imagen del perfil */
-    height: 30px; /* Ajusta el tamaño de la imagen del perfil */
-    border-radius: 50%; /* Hacer la imagen redonda */ 
-    margin-right: 10px; /* Espacio a la derecha de la imagen */
+.badge img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #007bff;
 }
 
-.message-content-line {
-    color: $light;
+.message-content {
+    color: vars.$light;
     font-size: 30px;
+    word-wrap: break-word;
 }
