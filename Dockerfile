@@ -26,6 +26,6 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expone el puerto 80 para el contenedor
 EXPOSE 80
-
+EXPOSE 3050
 # Inicia Nginx cuando el contenedor se ejecute
 CMD ["nginx", "-g", "daemon off;"]
