@@ -28,10 +28,10 @@ pipeline {
                 withSonarQubeEnv(credentialsId: 'sonarqube', installationName: 'sonarqube') {
                     sh '''
 					$SCANNER_HOME/bin/sonar-scanner \
-						-Dsonar.projectKey=tiktokchatapi \
-						-Dsonar.projectName=tiktokchatapi \
+						-Dsonar.projectKey=chatbottiktok \
+						-Dsonar.projectName=chatbottiktok \
                         -Dsonar.projectVersion=1.0 \
-                        -Dsonar.sources=/var/jenkins_home/workspace/tiktokchatapi \
+                        -Dsonar.sources=/var/jenkins_home/workspace/chatbottiktok \
                         -Dsonar.sourceEncoding=UTF-8 \
                         -Dsonar.host.url=http://192.168.1.50:9000
 					'''
