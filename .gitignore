@@ -25,7 +25,3 @@ dist-ssr
 
 
 yarn.lock 
-
-docker-compose.yml
-Dockerfile
-nginx.conf

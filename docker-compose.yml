@@ -1,0 +1,7 @@
+version: '3'
+services:
+  react-app:
+    build: .
+    ports:
+      - "3050:80" # Mapea el puerto 3000 del host al puerto 80 del contenedor
+    restart: always
