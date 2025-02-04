@@ -42,6 +42,7 @@ export const TtsChat = () => {
     const handleVoiceChange = (e) => {
         const new_selected_voice = e.target.value;
         setSelectedVoice(new_selected_voice);
+        console.log(new_selected_voice)
         localStorage.setItem('selectedVoice', new_selected_voice);
     };
 

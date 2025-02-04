@@ -1,49 +1,38 @@
-import { useState, useEffect, useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 
-export const useSpeechSynthesis = () => {
-    const [voices, setVoices] = useState([]);
-    
+export const useSpeechSynthesis = (voiceName = "Microsoft Sabina - Spanish (Mexico)") => {
+
+    const [ voices, setVoice ] = useState([]);
+
     useEffect(() => {
-        const loadVoices = () => {
-            const voicesList = window.speechSynthesis.getVoices();
-            setVoices(voicesList);
-        };
-
-        // Verifica si las voces ya están disponibles
-        if (window.speechSynthesis.getVoices().length === 0) {
-            window.speechSynthesis.addEventListener('voiceschanged', loadVoices);
-        } else {
-            loadVoices();
+        const updateVoices = () => {
+            const available_voices = window.speechSynthesis.getVoices();
+            setVoice(available_voices)
         }
 
-        // Limpia el event listener al desmontar el componente
-        return () => {
-            window.speechSynthesis.removeEventListener('voiceschanged', loadVoices);
-        };
-      }, []);
+        window.speechSynthesis.addEventListener("voicesChanged", updateVoices)
+        updateVoices();
+        
+        return () => window.speechSynthesis.removeEventListener("voicesChanged", updateVoices)
+    }, []);
 
     const speak = useCallback((message) => {
         if ('speechSynthesis' in window) {
+            const utterance = new SpeechSynthesisUtterance(message);
 
-            const enabled = JSON.parse(localStorage.getItem('enabled'));
-            const selectedVoiceName = localStorage.getItem('selectedVoice');
-
-            if(!enabled) {
-                console.warn('La sintesis de voz esta deshabilitada');
-                return
+            const selected_voice = voices.find(voice => voice.name === voiceName);
+            
+            if(selected_voice) {
+                utterance.voice = selected_voice;
+            } else {
+                console.warn(`Voz '${voiceName}' no encontrada, usando la predeterminada.`)
             }
 
-            const utterance = new SpeechSynthesisUtterance(message);
-            console.log('aqui llegamos ', utterance)
-            
-            const selectedVoice = voices.find(v => v.name === selectedVoiceName)
-
-            utterance.voice = selectedVoice
             window.speechSynthesis.speak(utterance);
         } else {
             console.warn("La síntesis de voz no es compatible con este navegador.");
         }
-    }, [voices])
+    }, [voices, voiceName])
 
     return speak;
 }
