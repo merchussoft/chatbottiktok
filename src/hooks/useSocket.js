@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 
 //const SOCKET_URL = 'https://tiktokchatapi.onrender.com';
 //const SOCKET_URL = 'http://127.0.0.1:3000';
-const SOCKET_URL = 'http://192.168.1.50:3041';
+const SOCKET_URL = 'http://192.168.1.40:3041';
 
 export const useSocket = () => {
 
