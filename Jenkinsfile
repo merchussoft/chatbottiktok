@@ -3,7 +3,6 @@ pipeline {
 	
 	environment {
         SCANNER_HOME = tool 'sonarqube'
-        VERCEL_TOKEN = credentials('vercel-token') // Credencial para Vercel
     }
 
     stages {
