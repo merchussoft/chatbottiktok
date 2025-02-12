@@ -32,7 +32,7 @@ pipeline {
                         -Dsonar.projectVersion=1.0 \
                         -Dsonar.sources=/var/jenkins_home/workspace/chatbottiktok \
                         -Dsonar.sourceEncoding=UTF-8 \
-                        -Dsonar.host.url=http://192.168.1.50:9000
+                        -Dsonar.host.url=http://192.168.1.40:9000
 					'''
                     echo 'SonarQube Analysis Completed'
                 }
